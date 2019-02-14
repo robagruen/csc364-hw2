@@ -1,3 +1,7 @@
+//Rob Gruen
+//CSC 364
+//HW2 - Max Inscreasing Subsequences
+
 import java.util.*;
 import java.lang.StringBuilder;
 
@@ -13,17 +17,10 @@ public class MaxIncreasingSubseq {
         for (int i = 0; i < userString.length(); i++) {
             charArray[i] = userString.charAt(i);
         }
-        char[] arr = new char[8];
-        arr[0] = 'k';
-        arr[1] = 'e';
-        arr[2] = 'n';
-        arr[3] = 't';
-        arr[4] = 'u';
-        arr[5] = 'c';
-        arr[6] = 'k';
-        arr[7] = 'y';
+
         System.out.print("The maximum increasing subsequence is ");
-        increasingSubsequence(arr);
+        increasingSubsequence(charArray);
+        System.out.println();
     }
 
 
@@ -58,11 +55,12 @@ public class MaxIncreasingSubseq {
         char[] printChars = new char[max];
         int newMax = max;
 
-        for (int i = 0; i < printChars.length; i++) {
-            for (int j = 0; j < prev.length; j++) {
-                if (prev[j] == ((max-1))) {
-                    printChars[i] = a[j];
+        for (int printCharsIndex = (newMax - 1); printCharsIndex > -1; printCharsIndex--) {
+            for (int scoreIndex = 0; scoreIndex < a.length; scoreIndex++) {
+                if (max == score[scoreIndex]) {
                     max--;
+                    printChars[printCharsIndex] = a[scoreIndex];
+                    break;
                 }
             }
         }
@@ -72,8 +70,6 @@ public class MaxIncreasingSubseq {
             System.out.print(printChars[j]);
             j++;
         }
-        // yutnk
-        // kntuy
 
     }
 
