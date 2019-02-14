@@ -57,16 +57,6 @@ public class MaxIncreasingSubseq {
 
         char[] printChars = new char[max];
         int newMax = max;
-//        char newChar = a[indexOfMax];
-//        int somethingI = 0;
-//        printChars[somethingI++] = newChar;
-//
-//        for (int i = indexOfMax-1; i > 0; i--) {
-//            int x = prev[i];
-//            if (x > -1) {
-//                printChars[somethingI++] = a[x];
-//            }
-//        }
 
         for (int i = 0; i < printChars.length; i++) {
             for (int j = 0; j < prev.length; j++) {
